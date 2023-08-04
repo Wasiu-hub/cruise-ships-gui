@@ -1,11 +1,11 @@
-const Itinerary = require('../src/itinerary');
+const Itinerary = require("../src/itinerary.js");
 
-describe('Itinerary', () => {
-  it('can be instantiated', () => {
+describe("Itinerary", () => {
+  it("can be instantiated", () => {
     expect(new Itinerary()).toBeInstanceOf(Object);
   });
 
-  it('can have ports', () => {
+  it("can have ports", () => {
     const dover = jest.fn();
     const calais = jest.fn();
 
