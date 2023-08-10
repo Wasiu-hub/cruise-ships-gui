@@ -1,8 +1,7 @@
 function Controller() {
-  this.initaliseSea();
+  this.initialiseSea();
 }
-
-Controller.prototype.initaliseSea = function initaliseSea() {
+Controller.prototype.initialiseSea = function initialiseSea() {
   const backgrounds = ["./images/water0.png", "./images/water1.png"];
 
   let backgroundIndex = 0;
@@ -14,4 +13,21 @@ Controller.prototype.initaliseSea = function initaliseSea() {
 
     backgroundIndex += 1;
   }, 1000);
+};
+
+Controller.prototype.renderPorts = function renderPorts(ports) {
+  const portsElement = document.querySelector("#ports");
+  portsElement.style.width = "0px";
+
+  ports.forEach((port, index) => {
+    const newPortElement = document.createElement("div");
+    const portsElementWidth = parseInt(portsElement.style.width, 10);
+
+    newPortElement.className = "port";
+    newPortElement.dataset.portName = port.name;
+    newPortElement.dataset.portIndex = index;
+
+    portsElement.appendChild(newPortElement);
+    portsElement.style.width = `${portsElementWidth + 256}px`;
+  });
 };
