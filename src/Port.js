@@ -19,4 +19,3 @@
     window.Port = Port;
   }
 })();
-module.exports = Port;
